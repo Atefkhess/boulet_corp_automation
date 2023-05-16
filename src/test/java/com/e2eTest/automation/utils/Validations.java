@@ -40,7 +40,7 @@ public class Validations extends BasePage {
 	private WebDriver driver;
 
 	/**
-	 * Instanciation de assertions.
+	 * Instantiation of assertions.
 	 */
 	public Validations() {
 		super();
@@ -58,7 +58,7 @@ public class Validations extends BasePage {
 	}
 
 	/**
-	 * methode Checks if is element displayed.
+	 * method Checks if is element displayed.
 	 *
 	 * @param element element web
 	 * @return boolean
@@ -68,7 +68,7 @@ public class Validations extends BasePage {
 	}
 
 	/**
-	 * methode Checks if is element selected
+	 * method Checks if is element selected
 	 *
 	 * @param element
 	 * @return boolean
@@ -78,7 +78,7 @@ public class Validations extends BasePage {
 	}
 
 	/**
-	 * methode Checks if is element enabled.
+	 * method Checks if is element enabled.
 	 *
 	 * @param element
 	 * @return boolean
@@ -119,7 +119,7 @@ public class Validations extends BasePage {
 	}
 
 	/**
-	 * methode Verif PDF text file.
+	 * method Verify PDF text file.
 	 *
 	 * @param text
 	 * @param pdfPath
@@ -167,7 +167,7 @@ public class Validations extends BasePage {
 
 
 	/**
-	 * methode Column contains value.
+	 * method Column contains value.
 	 *
 	 * @param pathToFile
 	 * @param columnIndex
@@ -189,7 +189,7 @@ public class Validations extends BasePage {
 	}
 
 	/**
-	 * methode Check field is empty.
+	 * method Check field is empty.
 	 * 
 	 * @param elementAttr
 	 */
@@ -200,6 +200,22 @@ public class Validations extends BasePage {
 		if (text.isEmpty()) {
 			log.info("input box is empty");
 		}
+	}
+	
+	/**
+	 * method Check Url has changed.
+	 * 
+	 * @param elementAttr
+	 */
+	public void checkUrlChanged(String url) {
+		String actualUrl = Setup.getDriver().getCurrentUrl();
+		if (actualUrl.equals(url)) {
+			log.info("The page did not change");
+		} else {
+			log.info("The page has changed");
+		}
+		log.info("Actual URL is : " + actualUrl);
+
 	}
 
 }

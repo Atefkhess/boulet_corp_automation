@@ -19,15 +19,15 @@ public class AleatoirePageObj {
 
 		
 		@CacheLookup
-		@FindBy(how = How.XPATH, using = "//img[@src='https://bouletcorp.com/wp-content/plugins/socialize-this/widgets/alteredicons/facebook.png']")
+		@FindBy(how = How.XPATH, using = "//img[@title='Twitter']\r\n")
 		public static WebElement facebookWidget;
 		
 		@CacheLookup
-		@FindBy(how = How.XPATH, using = "//img[@src='https://bouletcorp.com/wp-content/plugins/socialize-this/widgets/alteredicons/twitter.png']")
+		@FindBy(how = How.XPATH, using = "//img[@title='Twitter']\r\n")
 		public static WebElement twitterWidget;
 		
 		@CacheLookup
-		@FindBy(how = How.XPATH, using = "//img[@src='https://bouletcorp.com/wp-content/themes/bouletcorp/images/icons/Tumblr.png']")
+		@FindBy(how = How.XPATH, using = "//a[@title='Share on Tumblr']\r\n")
 		public static WebElement tumblrWidget;
 
 

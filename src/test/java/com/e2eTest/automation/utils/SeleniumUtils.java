@@ -101,7 +101,7 @@ public class SeleniumUtils extends BasePage {
 	}
 
 	
-	public static String getCurrentUrl(WebDriver driver) {
+	public  String getCurrentUrl() {
 		//System.out.println(driver.getCurrentUrl());
         return driver.getCurrentUrl();       
     }
