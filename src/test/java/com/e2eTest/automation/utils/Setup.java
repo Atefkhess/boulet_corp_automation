@@ -1,5 +1,7 @@
 package com.e2eTest.automation.utils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,12 +14,13 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 
 
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Setup {
 
 	private static WebDriver driver;
-
+	protected static Logger LOGGER = LogManager.getLogger(BasePage.class.getName());
 	/**
 	 * This method is used to open browser. This method is called before the
 	 * invocation of each test method in the given class. In this method we need to
@@ -28,7 +31,8 @@ public class Setup {
 	 */
 
 	@Before // Hooks Of Cucumber
-	public void setWebDriver() {
+	public void setWebDriver(Scenario scenario) {
+		LOGGER.info("scenario :" + scenario.getName() + "-started");
 		String browser = System.getProperty("browser");
 		if (browser == null) {
 			browser = "chrome";
@@ -39,7 +43,7 @@ public class Setup {
 			ChromeOptions chromeOptions = new ChromeOptions();
 			driver = new ChromeDriver();
 			*/
-			 System.setProperty("webdriver.http.factory", "jdk-http-client");
+			
 			ChromeOptions chromeOptions = new ChromeOptions();
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(chromeOptions);
@@ -59,8 +63,7 @@ public class Setup {
 		default:
 			throw new IllegalArgumentException("Browser\"" + browser + "\" is not supported. ");
 		}
-		//PageFactory.initElements(Setup.driver,LoginPage.class);
-		//System.out.println("this:"+this);
+		
 	}
 
 	/* Getter */

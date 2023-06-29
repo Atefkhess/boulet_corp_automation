@@ -4,13 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
-
-
+import com.e2eTest.automation.utils.BasePage;
 import com.e2eTest.automation.utils.Setup;
 
-public class AleatoirePageObj {
+public class AleatoirePageObj extends BasePage {
 
 		/* Retrieve Element */
 		@CacheLookup
@@ -32,6 +30,6 @@ public class AleatoirePageObj {
 
 
 		public AleatoirePageObj() {
-			PageFactory.initElements(Setup.getDriver(), this);
+			super(Setup.getDriver());
 		}
 	}

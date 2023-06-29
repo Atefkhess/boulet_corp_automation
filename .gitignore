@@ -1,5 +1,7 @@
 /target/
+/allure-results/
 *.exe
 *.project
 *.settings
 *.classpath
+*.idea

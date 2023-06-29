@@ -15,12 +15,12 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<junit.version>5.8.2</junit.version>
-		<selenium.version>4.5.0</selenium.version>
+		<selenium.version>4.10.0</selenium.version>
 		<log4jcore.version>2.17.2</log4jcore.version>
 		<log4japi.version>2.17.2</log4japi.version>
-		<cucumberjava.version>7.2.3</cucumberjava.version>
-		<cucumberjunit.version>7.2.3</cucumberjunit.version>
-		<commons.version>2.11.0</commons.version>
+		<cucumberjava.version>7.8.1</cucumberjava.version>
+		<cucumberjunit.version>7.8.1</cucumberjunit.version>
+		<commons.version>2.13.0</commons.version>
 		<pdf.version>1.8.1</pdf.version>
 		<recorder.version>0.7.7.0</recorder.version>
 		<csv.version>1.1</csv.version>
@@ -31,6 +31,7 @@
 		<apachepoi.version>3.13</apachepoi.version>
 		<json.version>1.1.1</json.version>
 		<junitplatform.version>1.8.1</junitplatform.version>
+		<allurereport.version>2.22.0</allurereport.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -38,19 +39,13 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>${apachepoi.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-http-jdk-client</artifactId>
-			<version>${seleniumclient.version}</version>
-		</dependency>	
+		
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
-     
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -86,13 +81,27 @@
 			<artifactId>cucumber-java</artifactId>
 			<version>${cucumberjava.version}</version>
 		</dependency>
-
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit-platform-engine -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>${cucumberjunit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+<dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>${cucumberjunit.version}</version>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->
+<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-cucumber7-jvm</artifactId>
+    <version>${allurereport.version}</version>
+</dependency>
 
 		<dependency>
 			<groupId>commons-io</groupId>
